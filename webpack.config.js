@@ -13,8 +13,8 @@ var production = process.env.NODE_ENV === 'production';
 
 var config = {
   entry: {
-    // Sources are expected to live in $app_root/webpack
-    'application': './webpack/application.js'
+    // Sources are expected to live in $app_root/client
+    'index': './client/index.js'
   },
 
   output: {
