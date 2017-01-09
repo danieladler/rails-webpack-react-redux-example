@@ -16,7 +16,18 @@ var config = {
     // Sources are expected to live in $app_root/client
     'index': './client/index.js'
   },
-
+  module: {
+    loaders: [
+      {
+        test: /.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015']
+        }
+      }
+    ]
+  },
   output: {
     // Build assets directly in to public/webpack/, let webpack know
     // that all webpacked assets start with webpack/
