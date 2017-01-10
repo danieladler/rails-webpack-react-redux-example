@@ -2,9 +2,12 @@ import React from 'react';
 
 class PlantInstance extends React.Component {
   render() {
+    const {plant} = this.props;
     return (
       <div>
-        <h2> PlantInstance Visible! </h2>
+        <p> <strong>Name:</strong> {plant.name_common} </p>
+        <p> Water every <strong>{plant.water_interval}</strong> days </p>
+        <br/>
       </div>
     )
   }
