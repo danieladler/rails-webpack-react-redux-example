@@ -1,13 +1,15 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import PlantsWrapper from '../components/PlantsWrapper.jsx';
+import { bindActionCreators } from 'redux'
+import * as actions from '../actions/PlantsActionCreators.jsx';
 
-const PlantsContainer = React.createClass({
-  render: function () {
-    return (
-      <div>
-        <h1> React Component Visible! </h1>
-      </div>
-    )
-  }
-});
+// selectively map parts of Redux global state to component's props
+const mapStateToProps = (state) => ({ plants: state.plants });
+
+const mapDispatchToProps = (dispatch) => (
+  bindActionCreators(actions, dispatch)
+);
+
+const PlantsContainer = connect(mapStateToProps, mapDispatchToProps)(PlantsWrapper);
 
 export default PlantsContainer;
