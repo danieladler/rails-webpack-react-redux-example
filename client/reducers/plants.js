@@ -1,15 +1,11 @@
 import { LOAD_PLANTS } from '../constants/PlantsConstants.jsx';
 
-const INITIAL_STATE = { all: [
-    {name_common: "sample plant 1", water_interval: 1},
-    {name_common: "sample plant 2", water_interval: 14}
-  ]
-}
+const INITIAL_STATE = { all: [] }
 
 const plants = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case "LOAD_PLANTS":
-      console.log('load_plants triggered');
+    case LOAD_PLANTS:
+      return { ...state, all: action.payload.data }
     default:
       return state;
   }
